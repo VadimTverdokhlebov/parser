@@ -1,9 +1,9 @@
 import express from 'express';
-import Controller from '../controllers/pdf';
-import validation from '../middlewares/validation';
+import { downloadPdf } from '../controllers/ParserController';
+import validation from '../middlewares/middleware';
 
 const Router = express.Router();
 
-Router.use('/api/upload/pdf', validation, Controller.uploadPage);
+Router.use('/api/download/pdf', validation, downloadPdf);
 
 export default Router;
