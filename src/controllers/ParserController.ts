@@ -5,7 +5,7 @@ import { PdfManager } from '../services/PdfService';
 import config from '../config';
 import path from 'path';
 
-const wordService = new WordService(['en_US', 'ru_RU']);
+const wordService = new WordService(['en_US']);
 
 export async function downloadPdf(req: Request, res: Response, next: NextFunction) {
   try {

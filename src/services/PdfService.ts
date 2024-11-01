@@ -18,20 +18,25 @@ interface Context extends PdfContext {
 
 export class PdfManager {
   private pdfContext: PdfContext;
+
   private context: Context;
 
   private styles: Array<string>;
+
   private scripts: Array<string>;
 
   private resetStylePath: string;
+
   private stylePath: string;
 
   private fileSaveBuffer: Buffer | undefined;
 
   private pdfFileName: string | undefined;
+
   private htmlFileName: string | undefined;
 
   private pdfFilePath: string | undefined;
+
   private htmlFilePath: string | undefined;
 
   constructor(pdfContext: PdfContext) {
@@ -53,7 +58,7 @@ export class PdfManager {
   public async generatePDF() {
     const browser: any = await puppeteer.launch({
       headless: true,
-      defaultViewport: null
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     this.pdfFileName = this.generateRandomFileName('pdf');

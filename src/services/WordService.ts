@@ -5,7 +5,9 @@ import { publicPath } from '../shared/utils';
 
 export class WordService {
   private langs: string[];
+
   private dictionaries: Map<string, Typo>;
+
   private words: string[];
 
   constructor(langs: string[]) {
